@@ -6,5 +6,6 @@ Requires an .html file of your bookmarks
 Output format
 * Date/Time
 * Status - Info (success), Warning (time out 403), and Error (ex destination is 404)
+* Time to load resource
 * URL
 * Messages
