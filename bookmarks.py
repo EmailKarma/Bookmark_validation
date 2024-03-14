@@ -16,11 +16,11 @@ def read_bookmarks_file(file_path):
 def test_url(url):
     """Tests if a URL is still operational by making a GET request."""
     try:
-        response = requests.get(url, timeout=5)
+        response = requests.get(url, timeout=5, allow_redirects=True)
         if response.status_code == 200:
-            logging.info(f"Successfully accessed: {url}")
+            logging.info(f"Successfully accessed: {response.url}")
         else:
-            logging.warning(f"Failed to access {url}. Status code: {response.status_code}")
+            logging.warning(f"Failed to access {response.url}. Status code: {response.status_code}")
     except requests.RequestException as e:
         logging.error(f"Failed to access {url}: {e}")
 
